@@ -1,5 +1,5 @@
 $navHeight: 8rem;
-
+$linkColor: #ff793b;
 
 .main-navigation {
   position: fixed;
@@ -8,17 +8,19 @@ $navHeight: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 500;
 
   height: $navHeight;
-
-
 
   .site-name {
     z-index: 3;
     color: white;
     font-size: 2rem;
     padding-top: 8rem;
+    transition: transform 0.2s linear;
   }
+
+  transition: transform 0.2s;
 
   &__link {
     position: absolute;
@@ -27,7 +29,7 @@ $navHeight: 8rem;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
     text-align: center;
     color: white;
 
@@ -44,20 +46,18 @@ $navHeight: 8rem;
 
     transition: color 0.1s linear;
 
-    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
-
-
+    span {
+      transition: all 0.1s linear;
+    }
     &--left {
-      background-image: linear-gradient(to left, #ff6a26, #d6571d);
+      background: $linkColor;
       transform: translate(-100%);
       padding-right: 4.5rem;
       clip-path: polygon(0% 0%, 100% 0%, 100% 105%, 25% 100%);
     }
 
     &--right {
-      background-image: linear-gradient(to left, #d6571d, #ff6a26);
+      background: $linkColor;
       padding-left: 4.5rem;
       clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 105%);
     }
@@ -83,24 +83,38 @@ $navHeight: 8rem;
     }
   }
 
-  // Centered decoration
-  &:before {
-    $decorationSize: 15rem;
-    content: '';
+  svg {
+    $decorationSize: 22rem;
+
     z-index: 2;
-    background: #222;
-    display: block;
+    fill: #222;
+
     width: $decorationSize;
     height: $decorationSize;
 
-    // Center position and rotate
     position: absolute;
     left: 50%;
     top: $navHeight - ($decorationSize / 2);
-    transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%);
+  }
 
-    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+  // Has scrolled
+  &__link {
+
+    .has-scrolled & {
+      span {
+        transform: translateY(1.5rem);
+      }
+    }
+  }
+
+  &.has-scrolled {
+    // height: 1rem;
+    transform: translateY(-3rem);
+
+    .site-name {
+      // padding-top: 3rem;
+      transform: translateY(-2.5rem);
+    }
   }
 }

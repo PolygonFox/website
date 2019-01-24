@@ -9,11 +9,32 @@ html {
 }
 
 body {
-  font-size: 62.5%; // We want 1 rem to be 10px
+  background: #EEE;
 }
 
-
 // Spacing
+$baseSpacing: 0.8rem;
+
+@mixin generateSpacingMY($multiplier) {
+  margin: #{$baseSpacing * $multiplier} 0 #{$baseSpacing * $multiplier} 0;
+}
+
 .my-1 {
-  margin: 0.8rem 0 0.8rem 0;
+  @include generateSpacingMY(1);
+}
+
+.my-2 {
+  @include generateSpacingMY(2);
+}
+
+.my-2 {
+  @include generateSpacingMY(3);
+}
+
+.my-3 {
+  @include generateSpacingMY(4);
+}
+
+.h100 {
+  height: 100vh;
 }
