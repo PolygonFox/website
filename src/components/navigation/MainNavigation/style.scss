@@ -1,0 +1,106 @@
+$navHeight: 8rem;
+
+
+.main-navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: $navHeight;
+
+
+
+  .site-name {
+    z-index: 3;
+    color: white;
+    font-size: 2rem;
+    padding-top: 8rem;
+  }
+
+  &__link {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+
+    // reset link styling
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    height: $navHeight;
+    width: 30rem;
+
+    left: 50%;
+
+    transition: color 0.1s linear;
+
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+
+
+    &--left {
+      background-image: linear-gradient(to left, #ff6a26, #d6571d);
+      transform: translate(-100%);
+      padding-right: 4.5rem;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 105%, 25% 100%);
+    }
+
+    &--right {
+      background-image: linear-gradient(to left, #d6571d, #ff6a26);
+      padding-left: 4.5rem;
+      clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 105%);
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      display: block;
+      background: #fff;
+      height: calc(#{$navHeight} + 2px);
+      transform: translateY(-100%);
+      transition: all 0.2s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #222;
+
+      &:before {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  // Centered decoration
+  &:before {
+    $decorationSize: 15rem;
+    content: '';
+    z-index: 2;
+    background: #222;
+    display: block;
+    width: $decorationSize;
+    height: $decorationSize;
+
+    // Center position and rotate
+    position: absolute;
+    left: 50%;
+    top: $navHeight - ($decorationSize / 2);
+    transform: translateX(-50%) rotate(45deg);
+
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.3);
+  }
+}

@@ -1,0 +1,19 @@
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  margin: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 62.5%; // We want 1 rem to be 10px
+}
+
+
+// Spacing
+.my-1 {
+  margin: 0.8rem 0 0.8rem 0;
+}
