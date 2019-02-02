@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  background: #EEE;
+  background: rgb(24, 26, 42);
+  color: #ccc;
 }
 
 // Spacing
@@ -37,4 +38,9 @@ $baseSpacing: 0.8rem;
 
 .h100 {
   height: 100vh;
+}
+
+.h-screen {
+  padding-top: 8rem;
+  height: calc(100vh); // 8 rem = height of folded navigation
 }

@@ -36,7 +36,6 @@ export default class MainNavigation extends React.Component {
   _scrollCheck = () => {
     const currentScrollPosition = window.scrollY
     const currentHasScrolledState = this.state.hasScrolled
-    console.log(currentScrollPosition, currentHasScrolledState)
     if(currentHasScrolledState === false && currentScrollPosition > 0) {
       this.animationIn.current.beginElement()
       this.setState({
