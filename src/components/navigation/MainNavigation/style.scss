@@ -12,109 +12,11 @@ $linkColor: #ff793b;
 
   height: $navHeight;
 
-  .site-name {
-    z-index: 3;
-    color: white;
-    font-size: 2rem;
-    padding-top: 8rem;
-    transition: transform 0.2s linear;
-  }
-
-  transition: transform 0.2s;
+  color: #fff;
 
   &__link {
-    position: absolute;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-weight: 500;
-    text-align: center;
-    color: white;
-
-    // reset link styling
+    color: #fff;
     text-decoration: none;
-    font-size: 1rem;
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 2px solid transparent;
-    height: $navHeight;
-    width: 30rem;
-
-    left: 50%;
-
-    transition: color 0.1s linear;
-
-    span {
-      transition: all 0.1s linear;
-    }
-    &--left {
-      background: $linkColor;
-      transform: translate(-100%);
-      padding-right: 4.5rem;
-      clip-path: polygon(0% 0%, 100% 0%, 100% 105%, 25% 100%);
-    }
-
-    &--right {
-      background: $linkColor;
-      padding-left: 4.5rem;
-      clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 105%);
-    }
-
-    &:before {
-      content: '';
-      width: 100%;
-      position: absolute;
-      display: block;
-      background: #fff;
-      height: calc(#{$navHeight} + 2px);
-      transform: translateY(-100%);
-      transition: all 0.2s;
-      z-index: -1;
-    }
-
-    &:hover {
-      color: #222;
-
-      &:before {
-        transform: translateY(0);
-      }
-    }
-  }
-
-  svg {
-    $decorationSize: 22rem;
-
-    z-index: 2;
-    fill: #222;
-
-    width: $decorationSize;
-    height: $decorationSize;
-
-    position: absolute;
-    left: 50%;
-    top: $navHeight - ($decorationSize / 2);
-    transform: translateX(-50%);
-  }
-
-  // Has scrolled
-  &__link {
-
-    .has-scrolled & {
-      span {
-        transform: translateY(1.5rem);
-      }
-    }
-  }
-
-  &.has-scrolled {
-    // height: 1rem;
-    transform: translateY(-3rem);
-
-    .site-name {
-      // padding-top: 3rem;
-      transform: translateY(-2.5rem);
-    }
+    margin: 0 5rem;
   }
 }

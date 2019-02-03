@@ -4,9 +4,20 @@
   position: relative;
   height: 100vh;
 
-  background-image: url('../../assets/fox-wallpaper.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: linear-gradient(#fff, #fff);
+
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  svg {
+    height: 100vh;
+    width: 100vw;
+  }
 
   &__scroll-down {
     @include resetButton()
@@ -15,7 +26,6 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-
 
     animation: scrollDownAttention 2s ease-in-out infinite;
 
