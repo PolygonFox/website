@@ -7,6 +7,8 @@ import './style.scss'
 import HomePage from '../pages/HomePage'
 import AboutPage from '../pages/AboutPage'
 
+import FooterBlock from '../../components/blocks/FooterBlock'
+
 class App extends React.Component {
 
   state = {
@@ -29,6 +31,8 @@ class App extends React.Component {
   render() {
     return <BrowserRouter>
      <div class='app'>
+
+        {/* Navigation */}
         <div class='app__navigation-container'>
           { this.state.navigationActive && 
             <ul class='app__navigation'>
@@ -38,10 +42,14 @@ class App extends React.Component {
           }
         </div>
 
+        {/* Page structure + routing */}
         <Switch>
           <Route exact path={`/`} component={HomePage}/>
           <Route path={`/about`} component={AboutPage}/>
         </Switch>
+        <div class='container'>
+          <FooterBlock />
+        </div>
       </div>
     </BrowserRouter>
   }

@@ -1,8 +1,13 @@
 import React from 'react'
 
-import './bundle'
+import bundle from './bundle'
 
 export default class HeaderBlock extends React.PureComponent {
+
+  componentDidMount() {
+    // Run the bundle
+    bundle()
+  }
 
   render() {
     return (

@@ -7,14 +7,17 @@
   }
 
   &__navigation {
+    width: 250px;
+    height: 100vh;
+
     margin: 0;
     padding: 10px;
-    width: 200px;
+
     list-style: none;
     background: #222;
-    height: 100vh;
+
     overflow-y: scroll;
-  
+
     &__item {
       padding: 0px 0;
     }
