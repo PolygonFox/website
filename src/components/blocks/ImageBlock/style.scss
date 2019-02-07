@@ -1,0 +1,9 @@
+.image-block {
+  text-align: center;
+  &__image {
+    background-image: url('/images/fox-wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+  }
+}

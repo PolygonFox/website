@@ -19,7 +19,18 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              "@babel/preset-react",
+              "@babel/preset-env"
+            ],
+            plugins: [
+              "react-hot-loader/babel",
+              "react-html-attrs",
+              "transform-class-properties"
+            ]
+          }
         }
       },
       {
@@ -53,7 +64,6 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
-    // hot: true,
     noInfo: true
   }
 }
