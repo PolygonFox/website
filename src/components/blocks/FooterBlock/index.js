@@ -24,7 +24,8 @@ export default class FooterBlock extends React.PureComponent {
         </div>
         <div class='col-md-4'>
           <div class='footer-block__item'>
-            <h2>Footer</h2>
+            <h2 contenteditable="true">Footer</h2>
+            <p>Lorem ipsum lala <br />Lorem</p>
           </div>
         </div>
       </div>

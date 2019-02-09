@@ -8,6 +8,7 @@ import HomePage from '../pages/HomePage'
 import AboutPage from '../pages/AboutPage'
 
 import FooterBlock from '../../components/blocks/FooterBlock'
+import TextArea from '../../components/TextArea'
 
 class App extends React.Component {
 
@@ -31,7 +32,6 @@ class App extends React.Component {
   render() {
     return <BrowserRouter>
      <div class='app'>
-
         {/* Navigation */}
         <div class='app__navigation-container'>
           { this.state.navigationActive && 
